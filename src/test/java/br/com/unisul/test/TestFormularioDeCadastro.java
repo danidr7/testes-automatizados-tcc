@@ -1,9 +1,12 @@
 package br.com.unisul.test;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,8 +20,8 @@ public class TestFormularioDeCadastro {
 	private FormularioDeCadastroPage formularioPage;
 	
 	@BeforeClass
-	public void preConditions(){
-		webDriver = new FirefoxDriver();
+	public void preConditions() throws MalformedURLException{
+		webDriver = new RemoteWebDriver(new URL("http://localhost:4441/wd/hub"), DesiredCapabilities.firefox());
 		webDriver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
 		webDriver.manage().window().maximize();
 		webDriver.get("http://formtcc-drserver.rhcloud.com/");
