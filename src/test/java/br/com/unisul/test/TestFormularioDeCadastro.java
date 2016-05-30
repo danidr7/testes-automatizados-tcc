@@ -21,7 +21,7 @@ public class TestFormularioDeCadastro {
 	
 	@BeforeClass
 	public void preConditions() throws MalformedURLException{
-		webDriver = new RemoteWebDriver(new URL("http://localhost:4441/wd/hub"), DesiredCapabilities.firefox());
+		webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
 		webDriver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
 		webDriver.manage().window().maximize();
 		webDriver.get("http://formtcc-drserver.rhcloud.com/");
