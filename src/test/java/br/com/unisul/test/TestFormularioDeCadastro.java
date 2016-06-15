@@ -17,7 +17,6 @@ import org.testng.annotations.Test;
 
 import br.com.unisul.page.FormularioDeCadastroPage;
 
-@Test
 public class TestFormularioDeCadastro {
 	
 	private WebDriver webDriver;
